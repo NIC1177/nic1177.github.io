@@ -26,16 +26,16 @@
       
       if (angle > 180) 
           angle = 360-angle;
-      return angle;
+      
   }
   
   function find_angle(input_array, point_1, point_2, point_3)
   {
       if ( typeof (input_array[point_1]) !== 'undefined' && typeof (input_array[point_2]) !== 'undefined' && typeof (input_array[point_3]) !== 'undefined' )
           var angle = calculate_angle(input_array[point_1],input_array[point_2], input_array[point_3] )
-          return angle
+         
   
-      return 0
+    
   }
   
   
@@ -63,7 +63,7 @@
   }
   
   const pose = new Pose({locateFile: (file) => {
-    return `https://cdn.jsdelivr.net/npm/@mediapipe/pose/${file}`;
+    
   }});
   pose.setOptions({
     modelComplexity: 1,
@@ -75,8 +75,7 @@
   
   const camera = new Camera(videoElement, {
     onFrame: async () => {
-      await pose.send({image: videoElement});
-    },
+   
     width: 1280,
     height: 720
   });
